@@ -14,25 +14,39 @@ WHEN and HOW to use them based on the user's question.
 import math
 from datetime import datetime
 
+from ddgs import DDGS
 from dotenv import load_dotenv
 from langchain.tools import Tool
-from langchain_community.tools import DuckDuckGoSearchRun, WikipediaQueryRun
+from langchain_community.tools import WikipediaQueryRun
 from langchain_community.utilities import WikipediaAPIWrapper
 
 load_dotenv()
 
 
 # ─── 1. DuckDuckGo Web Search ────────────────────────────────────────────────
-# Free, no API key required. Searches the web and returns top results.
+# Free, no API key required. Uses the ddgs package (renamed from duckduckgo-search).
+def _web_search(query: str) -> str:
+    """Perform a DuckDuckGo search and return formatted results."""
+    try:
+        results = list(DDGS().text(query, max_results=5))
+        if not results:
+            return "No results found for that query."
+        return "\n\n".join(
+            f"{r.get('title', '')}\n{r.get('body', '')}"
+            for r in results
+        )
+    except Exception as exc:
+        return f"Search error: {exc}"
+
+
 def get_search_tool() -> Tool:
     """
-    LangChain Tool wrapping DuckDuckGo search.
+    LangChain Tool wrapping DuckDuckGo search via the ddgs package.
     The agent uses this when it needs up-to-date information from the web.
     """
-    search = DuckDuckGoSearchRun(backend="html")
     return Tool(
         name="web_search",
-        func=search.run,
+        func=_web_search,
         description=(
             "Searches the web using DuckDuckGo and returns relevant results. "
             "Use this when you need current/recent information or facts that "

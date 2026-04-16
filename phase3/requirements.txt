@@ -9,9 +9,8 @@ langchain-groq==0.2.3
 groq==0.13.0
 
 # Tools
-duckduckgo-search==6.3.7
+ddgs                      # DuckDuckGo search (successor to duckduckgo-search)
 wikipedia==1.4.0
-lxml
 
 # Memory - Vector Store
 chromadb==0.5.23
