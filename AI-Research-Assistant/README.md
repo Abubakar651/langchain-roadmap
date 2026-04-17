@@ -1,4 +1,4 @@
-# AI Research Assistant — Phase 3
+# AI Research Assistant
 
 > **A fully functional CLI research assistant built with LangChain, Groq LLaMA 3.3, and ReAct agents.**
 
@@ -216,7 +216,6 @@ Start here if you're learning:
 
 ---
 
-## Part of the LangChain Roadmap
+## Related Projects
 
-This is **Phase 3** of a multi-phase LangChain learning series.
-Check the [full roadmap repo](https://github.com/Abubakar651/langchain-roadmap) for all phases.
+- [PDF Search Assistant](https://github.com/Abubakar651/PDF-Search-Assistant) — RAG-powered PDF Q&A with FAISS and Streamlit
