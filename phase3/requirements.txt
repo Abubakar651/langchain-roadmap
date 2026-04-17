@@ -1,0 +1,29 @@
+# Phase 3: LangChain Advanced Concepts - AI Research Assistant
+# Core LangChain packages
+langchain==0.3.14
+langchain-core==0.3.29
+langchain-community==0.3.14
+langchain-groq==0.2.3
+
+# LLM Provider
+groq==0.13.0
+
+# Tools
+ddgs                      # DuckDuckGo search (successor to duckduckgo-search)
+wikipedia==1.4.0
+
+# Memory - Vector Store
+chromadb==0.5.23
+langchain-chroma==0.1.4
+
+# Embeddings (free, local)
+sentence-transformers==3.3.1
+
+# Database
+sqlalchemy==2.0.36
+
+# Environment
+python-dotenv==1.0.1
+
+# Utilities
+tiktoken==0.8.0

@@ -1,19 +1,30 @@
-# Virtual environment
+# Virtual environments
 venv/
+.venv/
+env/
 
-# Environment variables (keep API keys private)
+# Environment variables (never commit secrets)
 .env
-
-# FAISS index (regenerated from PDFs)
-project/faiss_index/
 
 # Python cache
 __pycache__/
 *.pyc
 *.pyo
+*.pyd
 
-# Sample docs (optional — uncomment if PDFs are large)
-# sample_docs/
+# SQLite databases
+*.db
 
-# OS files
+# Jupyter checkpoints
+.ipynb_checkpoints/
+
+# OS artifacts
 .DS_Store
+Thumbs.db
+
+# IDE
+.vscode/
+.idea/
+
+# Claude Code
+.claude/
